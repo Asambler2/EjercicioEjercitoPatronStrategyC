@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace EjercicioFactoriaEjercitoC.ElBlindaje
 {
-    public class Placas : IBlindaje
+    public class Placas : IBlindaje, IValorBlindaje
     {
         public string Nombre = "Placas";
-        public int Blindaje = 20;
+        public int Blindaje { get; set; }  = 20;
         public string Mostrar()
         {
             return $"BLINDAJE[Nombre: {this.Nombre} y Blindaje: {this.Blindaje}]";

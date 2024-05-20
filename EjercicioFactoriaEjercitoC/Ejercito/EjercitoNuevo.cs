@@ -1,4 +1,7 @@
-﻿using EjercicioFactoriaEjercitoC.Unidades;
+﻿using EjercicioFactoriaEjercitoC.ElAtaque;
+using EjercicioFactoriaEjercitoC.ElBlindaje;
+using EjercicioFactoriaEjercitoC.LaVelocidad;
+using EjercicioFactoriaEjercitoC.Unidades;
 using EjercicioFactoriaEjercitoC.ValidadorPresupuesto;
 using System;
 using System.Collections.Generic;
@@ -35,9 +38,9 @@ namespace EjercicioFactoriaEjercitoC.Ejercito
             {
                 EjercitoListaUnidades.Add(Unidad);
                 this.NumElementos++;
-                this.PotenciaFuegoTotal += Unidad.PotenciaFuego;
-                this.BlindajeTotal += Unidad.Blindaje;
-                this.VelocidadTotal += Unidad.Velocidad;
+                this.PotenciaFuegoTotal += (Unidad.PotenciaFuego as IValorPotencia).Potencia;
+                this.BlindajeTotal += (Unidad.Blindaje as IValorBlindaje).Blindaje;
+                this.VelocidadTotal += (Unidad.Velocidad as IValorVelocidad).Velocidad;
                 this.GastoTotal += (Unidad as ICosteable).Precio;
                 this.CapacidadMilitar = CalculoCapacidadMilitar();
             } else

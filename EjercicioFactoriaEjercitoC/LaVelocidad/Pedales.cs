@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace EjercicioFactoriaEjercitoC.LaVelocidad
 {
-    public class Pedales : IVelocidad
+    public class Pedales : IVelocidad, IValorVelocidad
     {
         public string Nombre = "Pedales";
-        public int Velocidad = 20;
+        public int Velocidad { get; set; }  = 20;
         public string Mostrar()
         {
             return $"VELOCIDAD[Nombre: {this.Nombre} y Velocidad: {this.Velocidad}]";

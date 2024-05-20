@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace EjercicioFactoriaEjercitoC.ElAtaque
 {
-    public class Cannon: IPotencia
+    public class Cannon: IPotencia, IValorPotencia
     {
         public string Nombre = "Cañon";
-        public int Potencia = 30;
+        public int Potencia { get; set; }  = 30;
         public string Mostrar()
         {
             return $"ATAQUE[Nombre: {this.Nombre} y Potencia: {this.Potencia}]";
