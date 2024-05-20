@@ -1,4 +1,7 @@
-﻿using System;
+﻿using EjercicioFactoriaEjercitoC.ElAtaque;
+using EjercicioFactoriaEjercitoC.ElBlindaje;
+using EjercicioFactoriaEjercitoC.LaVelocidad;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,12 +12,12 @@ namespace EjercicioFactoriaEjercitoC.Unidades
     public class Unidad : IMilitarizable, ICosteable
     {
         public string Titulo { get; set; }
-        public int Velocidad { get; set; }
-        public int Blindaje { get; set; }
-        public int PotenciaFuego { get; set; }
+        public IVelocidad Velocidad { get; set; }
+        public IBlindaje Blindaje { get; set; }
+        public IPotencia PotenciaFuego { get; set; }
         public float Precio { get; set; }
 
-        public Unidad (string titulo, int velocidad, int blindaje, int potenciaFuego, float precio)
+        public Unidad (string titulo, IVelocidad velocidad, IBlindaje blindaje, IPotencia potenciaFuego, float precio)
         {
             Titulo = titulo;
             Velocidad = velocidad;
