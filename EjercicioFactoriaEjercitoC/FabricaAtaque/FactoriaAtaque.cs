@@ -15,7 +15,7 @@ namespace EjercicioFactoriaEjercitoC.FabricaAtaque
             Console.WriteLine("Pulsa 1 para elegir sin ataque");
             Console.WriteLine("Pulsa 2 para elegir pistola");
             Console.WriteLine("Pulsa 3 para elegir fusil");
-            Console.WriteLine("Pulsa 4 para elegir no cañon");
+            Console.WriteLine("Pulsa 4 para elegir cañon");
 
             Comando = int.Parse(Console.ReadLine());
 

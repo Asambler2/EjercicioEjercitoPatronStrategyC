@@ -15,7 +15,7 @@ namespace EjercicioFactoriaEjercitoC.FabricaBlindaje
             Console.WriteLine("Pulsa 1 para elegir sin blindaje");
             Console.WriteLine("Pulsa 2 para elegir acolchado");
             Console.WriteLine("Pulsa 3 para elegir placas");
-            Console.WriteLine("Pulsa 4 para elegir no acorazado");
+            Console.WriteLine("Pulsa 4 para elegir acorazado");
 
             Comando = int.Parse(Console.ReadLine());
 
