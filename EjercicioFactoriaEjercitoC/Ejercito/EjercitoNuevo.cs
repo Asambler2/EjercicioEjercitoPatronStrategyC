@@ -38,9 +38,9 @@ namespace EjercicioFactoriaEjercitoC.Ejercito
             {
                 EjercitoListaUnidades.Add(Unidad);
                 this.NumElementos++;
-                this.PotenciaFuegoTotal += (Unidad.PotenciaFuego as IValorPotencia).Potencia;
-                this.BlindajeTotal += (Unidad.Blindaje as IValorBlindaje).Blindaje;
-                this.VelocidadTotal += (Unidad.Velocidad as IValorVelocidad).Velocidad;
+                if(Unidad.PotenciaFuego is IValorPotencia)this.PotenciaFuegoTotal += (Unidad.PotenciaFuego as IValorPotencia).Potencia;
+                if(Unidad.Blindaje is IValorBlindaje)this.BlindajeTotal += (Unidad.Blindaje as IValorBlindaje).Blindaje;
+                if(Unidad.Velocidad is IValorVelocidad)this.VelocidadTotal += (Unidad.Velocidad as IValorVelocidad).Velocidad;
                 this.GastoTotal += (Unidad as ICosteable).Precio;
                 this.CapacidadMilitar = CalculoCapacidadMilitar();
             } else
