@@ -1,4 +1,10 @@
-﻿using EjercicioFactoriaEjercitoC.Unidades;
+﻿using EjercicioFactoriaEjercitoC.ElAtaque;
+using EjercicioFactoriaEjercitoC.ElBlindaje;
+using EjercicioFactoriaEjercitoC.FabricaVelocidad;
+using EjercicioFactoriaEjercitoC.FabricaBlindaje;
+using EjercicioFactoriaEjercitoC.FabricaAtaque;
+using EjercicioFactoriaEjercitoC.LaVelocidad;
+using EjercicioFactoriaEjercitoC.Unidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,18 +18,21 @@ namespace EjercicioFactoriaEjercitoC.FabricaUnidades
         public IMilitarizable DameUnidad()
         {
             string NombreUnidad = "";
-            int Velocidad = 0;
-            int Blindaje = 0;
-            int PotenciaFuego = 0;
+            IVelocidad Velocidad;
+            IBlindaje Blindaje;
+            IPotencia PotenciaFuego;
             float Precio = 0;
             Console.WriteLine("Escribe el nombre de la unidad");
             NombreUnidad = Console.ReadLine();
             Console.WriteLine("Escribe la velocidad de la unidad");
-            Velocidad = int.Parse(Console.ReadLine());
+            IFactoriaVelocidad LaFabricaVelocidad = new FactoriaVelocidad();
+            Velocidad = LaFabricaVelocidad.DameVelocidad();
             Console.WriteLine("Escribe el blindaje de la unidad");
-            Blindaje = int.Parse(Console.ReadLine());
+            IFactoriaBlindaje LaFabricaBlindaje = new FactoriaBlindaje();
+            Blindaje = LaFabricaBlindaje.DameBlindaje();
             Console.WriteLine("Escribe la potencia de fuego de la unidad");
-            PotenciaFuego = int.Parse(Console.ReadLine());
+            IFactoriaAtaque LaFabricaAtaque = new FactoriaAtaque();
+            PotenciaFuego = LaFabricaAtaque.DameAtaque();
             Console.WriteLine("Escribe el precio de la unidad");
             Precio = float.Parse(Console.ReadLine());
             return new Unidad(NombreUnidad, Velocidad, Blindaje, PotenciaFuego, Precio);

@@ -28,7 +28,7 @@ namespace EjercicioFactoriaEjercitoC.Unidades
 
         public string Mostrar()
         {
-            return $"Unidad: {this.Titulo} con velocidad: {this.Velocidad}, blindaje: {this.Blindaje}, potencia de fuego: {this.PotenciaFuego} y precio: {this.Precio}";
+            return $"Unidad: {this.Titulo} con velocidad: {this.Velocidad.Mostrar()}, blindaje: {this.Blindaje.Mostrar()}, potencia de fuego: {this.PotenciaFuego.Mostrar()} y precio: {this.Precio}";
         }
     }
 }
